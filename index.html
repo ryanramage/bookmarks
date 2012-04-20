@@ -10,27 +10,18 @@
 
 
     <div class="container" role="main">
-        <div class="bookmark"></div>
 
-        <h2>To install the “Pin It” button in Chrome:</h2>
-        <ol>
-            <li>Display your Bookmarks by clicking the Wrench Icon > Tools > Always Show Bookmarks Bar</li>
-            <li>Drag the “Pin It” button to your Bookmarks bar</li>
-            <li>When you are browsing the web, push the “Pin It” button to pin the site.</li>
-        </ol>
         <div class="row topic-summary">
             <div class="span9">
                 <div class="row">
                     <div class="span=2">
-                        <a href="./bookmark?return=list" class="btn btn-success">New</a>
+                        <a href="./bookmark?return=list" class="btn btn-success btn-large help" title="Create a new bookmark.">New</a>
                     </div>
                     <div class="offset1 span6">
                         <ul class="nav nav-pills topicFilter">
-                            <li class="active" data-sort="0"><a href="#">Recent</a></li>
-                            <li  data-sort="1"><a href="#">Votes</a></li>
-                            <li  data-sort="2"><a href="#">Views</a></li>
-                            <li  data-sort="3"><a href="#">Undiscussed</a></li>
-                            <li  data-sort="4"><a href="#">Unresolved</a></li>
+                            <li class="active" data-sort="0"><a href="#"  class="help" title="Show bookmarks by when they were added">Recent</a></li>
+                            <li  data-sort="1"><a href="#" class="help" title="Show bookmarks that have not been reviewed">To Review</a></li>
+                            <li  data-sort="2"><a href="#" class="help"   title="Order bookmarks by clicks">Views</a></li>
                         </ul>
                     </div>
                 </div>
@@ -38,11 +29,11 @@
                 </div>
             </div>
             <div class="span3">
-                <div class="welcome-message">
-                    <h5>Welcome!</h5>
 
-                </div>
-                <h5>
+                <a class="btn btn-info btn-small help" data-toggle="modal" href="#myModal" title="Shows you how to add the bookmarklet to your browser" >How do I bookmark?</a>
+
+
+                <h5 class="related-tags">
                     Related Tags
                 </h5>
                 <ul class="related unstyled">
@@ -55,10 +46,30 @@
         </div>
     </div>
 
+    <div class="modal" id="myModal" style="display: none;">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>&nbsp;</h3>
+      </div>
+      <div class="modal-body">
+         <div class="bookmark"></div>
+         <h2>To install the “Pin It” button in Chrome:</h2>
+         <ol>
+             <li>Display your Bookmarks by clicking the Wrench Icon > Tools > Always Show Bookmarks Bar</li>
+             <li>Drag the “Pin It” button to your Bookmarks bar</li>
+             <li>When you are browsing the web, push the “Pin It” button to pin the site.</li>
+         </ol>
+      </div>
+
+    </div>
+
+
     <script type="text/javascript" src="static/js/lib/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/dashboard/_design/dashboard/_rewrite/static/js/topbar.js"></script>
 
     <script type="text/javascript" src="modules.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-tooltip.js"></script>
     <script type="text/javascript" src="static/js/ui.js"></script>
   </body>
 </html>

@@ -4,6 +4,11 @@ var _ = require('underscore')._;
 
 $(function() {
 
+    $('#myModal').modal();
+    $('#myModal').modal('hide');
+
+    $('.help').tooltip({placement: 'bottom'});
+
     var location = window.location;
     $('.bookmark').html(handlebars.templates['bookmark.html']({location : location}, {}));
 
@@ -28,7 +33,7 @@ $(function() {
     db.getView('bookmarks', 'by_date', {include_docs:true, descending: true}, function(err, data) {
         if (err) return humane.error(err);
         _.each(data.rows, function(row) {
-            var random = Math.floor(Math.random()*10000);
+            var random = '47155'; //Math.floor(Math.random()*10000);
             row.doc.random = random;
             $('.bookmarks').append(handlebars.templates['bookmark_row.html'](row.doc, {}));
         })
