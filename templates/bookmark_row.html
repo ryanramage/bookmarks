@@ -5,17 +5,26 @@
                 <img src='http://www.bitpixels.com/getthumbnail?size=200&code={{random}}&url={{url}}' class="site-image"/>
             </a>
         </div>
-        <div class="span6">
+        <div class="span5">
             <div class="title">
                 <a class="bookmark" href="{{url}}"  data-id="{{_id}}">{{title}}</a>
             </div>
             <p class="small text">
-                {{short_text}} {{clicks}}
+                {{short_text}}
             </p>
             <div class="tags">
                 {{#each tags}}
                 <a href="#/tagged/{{this}}" class="tag-link">{{this}}</a>
                 {{/each}}
+            </div>
+        </div>
+        <div class="span1">
+            {{#if clicks}}
+                <i class="icon-ok"></i> <span class="views">{{clicks}}</span>
+            {{/if}}
+
+            <div class="actions">
+                <button class="btn btn-small archive"  data-id="{{_id}}">Archive</button>
             </div>
         </div>
     </div>
