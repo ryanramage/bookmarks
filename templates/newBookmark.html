@@ -6,9 +6,12 @@
 <body>
    <form class="form well" action="./save" method="POST">
        <label>Title</label>
-       <input name="title" value="{{title}}" />
+       <input name="title" value="{{title}}" class="span4"/>
+       <label>Note</label>
+       <textarea name="short_text" id="bookmarkShortText"  class="span4"></textarea>
+
        <label>Url</label>
-       <input name="url" value="{{url}}" />
+       <input name="url" value="{{url}}"  class="span4"/>
        <label></label>
        <input type="submit" value="save" class="btn btn-primary"/>
        <a href="javascript:parent.postMessage('close', '*')" class="btn">Cancel</a>

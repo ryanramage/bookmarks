@@ -1,0 +1,22 @@
+<div class="row topic" id="{{_id}}">
+    <div class="row">
+        <div class="span2">
+            <a href="{{url}}"  class="bookmark"  data-id="{{_id}}">
+                <img src='http://www.bitpixels.com/getthumbnail?size=200&code={{random}}&url={{url}}' class="site-image"/>
+            </a>
+        </div>
+        <div class="span6">
+            <div class="title">
+                <a class="bookmark" href="{{url}}"  data-id="{{_id}}">{{title}}</a>
+            </div>
+            <p class="small text">
+                {{short_text}} {{clicks}}
+            </p>
+            <div class="tags">
+                {{#each tags}}
+                <a href="#/tagged/{{this}}" class="tag-link">{{this}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

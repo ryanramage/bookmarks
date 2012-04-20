@@ -26,6 +26,8 @@
         "handlebars-helpers": "0.0.2",
         "git-info" : null,
         "md5": null,
-        "querystring" : null
+        "querystring" : null,
+        "db" : null,
+        "underscore" : null
     }
 }
