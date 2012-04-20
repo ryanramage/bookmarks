@@ -1,0 +1,88 @@
+// CSS Reset
+@import "bootstrap/reset.less";
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins.less";
+
+// Grid system and page structure
+@import "bootstrap/scaffolding.less";
+@import "bootstrap/grid.less";
+@import "bootstrap/layouts.less";
+
+// Base CSS
+@import "bootstrap/type.less";
+@import "bootstrap/code.less";
+@import "bootstrap/forms.less";
+@import "bootstrap/tables.less";
+
+// Components: common
+@import "bootstrap/sprites.less";
+@import "bootstrap/dropdowns.less";
+@import "bootstrap/wells.less";
+@import "bootstrap/component-animations.less";
+@import "bootstrap/close.less";
+
+// Components: Buttons & Alerts
+@import "bootstrap/buttons.less";
+@import "bootstrap/button-groups.less";
+@import "bootstrap/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "bootstrap/navs.less";
+@import "bootstrap/navbar.less";
+@import "bootstrap/breadcrumbs.less";
+@import "bootstrap/pagination.less";
+@import "bootstrap/pager.less";
+
+// Components: Popovers
+@import "bootstrap/modals.less";
+@import "bootstrap/tooltip.less";
+@import "bootstrap/popovers.less";
+
+// Components: Misc
+@import "bootstrap/thumbnails.less";
+@import "bootstrap/labels.less";
+@import "bootstrap/progress-bars.less";
+@import "bootstrap/accordion.less";
+@import "bootstrap/carousel.less";
+@import "bootstrap/hero-unit.less";
+
+// Utility classes
+@import "bootstrap/utilities.less"; // Has to be last to override when necessary
+
+
+
+#BigPinItButton {float: left; margin-right: 18px; padding: 11px 15px; text-align: center; font-size: 18px; line-height: 1em; background: #fff url(../images/buttonGradient10.png) top left repeat-x; border: 1px solid #fff; cursor: move; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; box-shadow: 0 1px 2px rgba(34,25,25,0.5); -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.5); -webkit-box-shadow: 0 1px 2px rgba(34,25,25,0.5);}
+#BigPinItButton:hover {color: #000; text-decoration: none;}
+
+#PinButton {width: 632px; margin: 0 auto;}
+#PinButton p {margin: 0 0 18px; font-size: 18px; font-weight: 300; line-height: 24px;}
+#PinButton ol li {margin: 0 0 8px 24px; list-style: decimal outside; font-size: 18px; line-height: 24px; font-weight: 300;}
+
+#ButtonHolder {margin-bottom: 31px; padding: 15px; background-color: #daecf6; border-top: 1px solid #c4ddef; overflow: hidden;}
+#ButtonHolder p {margin: 0;}
+
+#ButtonInstructions {padding-top: 9px;}
+
+#BigPinItButton:hover {color: #3b2e2e; text-decoration: none; box-shadow: inset 0 0 4px rgba(255,255,255,0.5), inset 0 1px 2px rgba(255,255,255,0.7), 0 2px #ddd, 0 3px 0 #e7e7e7, 0 4px 2px rgba(0,0,0,0.15), 0 4px 17px rgba(34,25,25,0.2); -moz-box-shadow: inset 0 0 4px rgba(255,255,255,0.5), inset 0 1px 2px rgba(255,255,255,0.7), 0 2px #ddd, 0 3px 0 #e7e7e7, 0 4px 2px rgba(0,0,0,0.15), 0 4px 17px rgba(34,25,25,0.2); -webkit-box-shadow: inset 0 0 4px rgba(255,255,255,0.5), inset 0 1px 2px rgba(255,255,255,0.7), 0 2px #ddd, 0 3px 0 #e7e7e7, 0 4px 2px rgba(0,0,0,0.15), 0 4px 17px rgba(34,25,25,0.2);}
+
+#GenerateAButton .line {padding: 10px 0;}
+#GenerateAButton .line label, #GenerateAButton .line cite { font-size: 14px; color: #888; line-height: 14px;}
+
+#GenerateAButton .line cite { display: block; font-size: 13px; font-style: normal; margin: 5px 0 0 0;}
+
+
+#GenerateAButton .line label strong {color: #221919;}
+#GenerateAButton .line input,
+#GenerateAButton .line textarea {font-size: 14px; height: 1.2em; width: 337px; margin-top: 4px; padding: 4px; border: 1px solid #aaa;}
+
+#GenerateAButton .line textarea { height: 4em; }
+
+
+#CodeGenerator {float: left; width: 347px;}
+#PinItPreview {float: right; width: 220px;}
+#CodeGenerator,
+#PinItPreview {height: 266px; margin-bottom: 10px; padding: 10px; background: #fff; border: 1px solid #f2f2f2;}
+
+#PinItPreview p {font-size: 14px; color: #221919;}

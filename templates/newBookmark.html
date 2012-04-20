@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>New Bookmark</title>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+</head>
+<body>
+   <form class="form well" action="./save" method="POST">
+       <label>Title</label>
+       <input name="title" value="{{title}}" />
+       <label>Url</label>
+       <input name="url" value="{{url}}" />
+       <label></label>
+       <input type="submit" value="save" class="btn btn-primary"/>
+       <a href="javascript:parent.postMessage('close', '*')" class="btn">Cancel</a>
+   </form>
+</body>
+</html>

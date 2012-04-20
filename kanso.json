@@ -1,0 +1,31 @@
+{
+    "name": "bookmarks",
+    "version": "0.0.1",
+    "description": "A bookmark management app",
+    "url": "https://github.com/ryanramage/bookmarks",
+    "categories": ["productivity"],
+    "attachments": ["static", "index.html"],
+    "modules": "lib",
+    "load": "lib/app",
+    "less": {
+            "compile": "static/css/main.less"
+    },
+    "handlebars": {
+        "all_partials": true,
+        "templates": "templates"
+    },
+    "dependencies": {
+        "attachments": null,
+        "modules": null,
+        "bootstrap-less" : null,
+        "less-precompiler": null,
+        "properties": null,
+        "underscore": null,
+        "async": null,
+        "handlebars": null,
+        "handlebars-helpers": "0.0.2",
+        "git-info" : null,
+        "md5": null,
+        "querystring" : null
+    }
+}

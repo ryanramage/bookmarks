@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+      <link rel="icon" type="image/png" href="static/img/ark2.png" />
+    <title>Bookmarks!</title>
+  </head>
+  <body>
+
+
+    <div class="container" role="main">
+        <h1>Save Bookmark</h1>
+        <form class="form well" >
+            <label>Title</label>
+            <input name="title" id="bookmarkTitle" value="{{title}}" class="span4"/>
+            <label>Url</label>
+            <input name="url" id="bookmarkUrl" value="{{url}}" class="span6" />
+            <label></label>
+            <input type="submit" value="save" class="btn btn-primary"/>
+            <input type="submit" value="cancel" class="btn cancel"/>
+
+        </form>
+    </div>
+
+    <script type="text/javascript" src="static/js/lib/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/dashboard/_design/dashboard/_rewrite/static/js/topbar.js"></script>
+
+    <script type="text/javascript" src="modules.js"></script>
+    <script type="text/javascript" src="static/js/newBookmarkFull.js"></script>
+  </body>
+</html>

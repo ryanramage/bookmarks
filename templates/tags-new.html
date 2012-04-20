@@ -1,0 +1,41 @@
+<ul class="breadcrumb">
+  <li>
+    <a href="#/tags">Tags</a> <span class="divider">/</span>
+  </li>
+  <li class="active">
+    <a href="#/tags/new">New</a>
+  </li>
+</ul>
+
+
+<form class="well">
+    <legend>Create Tag</legend>
+
+
+
+    <label>Name</label>
+    <input type="text" name="name" />
+
+
+    <fieldset class="control-group">
+           <label class="control-label" for="prependedInput">Tag</label>
+           <div class="controls">
+             <div class="input-prepend">
+               <span class="add-on">#</span>
+               <input class="span3" id="tag" name="hash" size="16" type="text">
+             </div>
+             <p class="help-block">When entering text, use this to reference this tag</p>
+           </div>
+    </fieldset>
+
+    <label>Description</label>
+    <textarea class="input-xlarge" rows="3"  name="description"></textarea>
+
+
+    <fieldset class="form-actions">
+        <button class="btn btn-primary">Create</button>
+        <button class="btn cancel">Cancel</button>
+    </fieldset>
+
+</form>
+
