@@ -23,7 +23,7 @@ $(function() {
 
 
 
-
+    tags_and_counts();
 
     $('.archive').live('click', function(){
         var me = $(this);
@@ -64,8 +64,14 @@ $(function() {
         return false;
     })
 
-    function render_data(data) {
+    function render_data(data, empty_msg) {
+        if (!empty_msg) empty_msg = "No bookmarks here";
         $('.bookmarks').empty();
+
+        if (data.rows.length == 0) {
+            $('.bookmarks').append(handlebars.templates['no_results.html']({msg : empty_msg}, {}));
+            return;
+        }
         _.each(data.rows, function(row) {
             var random = Math.floor(Math.random()*10000);
             row.doc.random = random;
@@ -75,6 +81,11 @@ $(function() {
             });
         });
     }
+
+    function render_tags(data) {
+        $('.tags-all').html(handlebars.templates['tags-all.html']({rows : data.rows}, {}));
+    }
+
 
     function activate_tab(tab) {
         $('ul.topicFilter li').removeClass('active');
@@ -95,7 +106,7 @@ $(function() {
         activate_tab('to-review');
         db.getView('bookmarks', 'by_views', {include_docs:true, descending: true, endkey : [0], startkey: [0, {}], random : Math.floor(Math.random()*10000) }, function(err, data) {
             if (err) return humane.error(err);
-            render_data(data);
+            render_data(data, "Woohoo! You've read all your bookmarks. ");
         });
     }
 
@@ -108,6 +119,33 @@ $(function() {
         });
     }
 
+    function tagged_recent(tag) {
+        if (checkLastRoute('tagged_recent_' + tag)) return;
+        activate_tab('recent');
+        db.getView('bookmarks', 'by_tag', {include_docs:true, descending: true, random : Math.floor(Math.random()*10000), startkey: [tag, Number.MAX_VALUE], endkey: [tag], reduce: false }, function(err, data) {
+            if (err) return humane.error(err);
+            render_data(data);
+        });
+    }
+
+
+    function tagged_to_review(tag) {
+
+    }
+
+    function tagged_views(tag) {
+
+    }
+
+    function tags_and_counts () {
+        $.getJSON('./all_tag_count', function(data) {
+            render_tags(data);
+        })
+
+    }
+
+
+
     var last_route = null;
     function checkLastRoute(route) {
         if (last_route == route) return true;
@@ -118,10 +156,14 @@ $(function() {
     var routes = {
       '/recent' : recent,
       '/to_review' : to_review,
-      '/views'   : views
+      '/views'   : views,
+      '/tagged/:tag/recent' : tagged_recent,
+      '/tagged/:tag/to_review' : tagged_to_review,
+      '/tagged/:tag/views' : tagged_views,
+      '/tagged/:tag' : tagged_recent
     };
     var router = Router(routes);
-    router.init('/recent');
+    router.init('/to_review');
 
 
 
