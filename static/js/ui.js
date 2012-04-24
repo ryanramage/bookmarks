@@ -10,7 +10,8 @@ $(function() {
     $('.help').tooltip({placement: 'bottom'});
 
     var location = window.location;
-    $('.bookmark').html(handlebars.templates['bookmark.html']({location : location}, {}));
+    var bookmarklet = location.protocol + '//' + location.host + location.pathname;
+    $('.bookmark').html(handlebars.templates['bookmark.html']({location : bookmarklet}, {}));
 
 
 
@@ -101,7 +102,7 @@ $(function() {
     function views() {
         if (checkLastRoute('view')) return;
         activate_tab('view');
-        db.getView('bookmarks', 'by_views', {include_docs:true, descending: true, endkey : [1, {}], startkey: [Number.MAX_VALUE, {}], random : Math.floor(Math.random()*10000)  }, function(err, data) {
+        db.getView('bookmarks', 'by_views', {include_docs:true, descending: true, endkey : [1], startkey: [Number.MAX_VALUE, {}], random : Math.floor(Math.random()*10000)  }, function(err, data) {
             if (err) return humane.error(err);
             render_data(data);
         });

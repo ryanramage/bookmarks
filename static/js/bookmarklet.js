@@ -41,7 +41,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 	 */
 	function createIFrame(){
 		$("#w3c-nav-iframe").remove();
-		$(document.body).append('<iframe id="w3c-nav-iframe" frameborder="0" height="251px" width="350px" scrolling="no" style="padding:0px;position:fixed;top:10px;right:10px;z-index:999999999" border="0"></iframe>');
+		$(document.body).append('<iframe id="w3c-nav-iframe" frameborder="0" height="293px" width="350px" scrolling="no" style="padding:0px;position:fixed;top:10px;right:10px;z-index:999999999" border="0"></iframe>');
 
 	}
 

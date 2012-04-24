@@ -5,6 +5,9 @@ $(function(){
     }
 
 
+    $('#topicTags').chosen({no_results_text: "No results matched"});
+
+
     $('form').on('submit', function() {
 
         try {

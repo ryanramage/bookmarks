@@ -2,11 +2,19 @@
 <head>
     <title>Create Bookmark</title>
     <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/chosen.css"/>
 </head>
 <body>
    <form class="form well" action="./save" method="POST">
        <label>Title</label>
        <input name="title" value="{{title}}" class="span4"/>
+       <label>Tags</label>
+       <select name="tags" id="topicTags" multiple data-placeholder="Choose some tags.">
+       {{#each tags}}
+            <option>{{.}}</option>
+       {{/each}}
+       </select>
+
        <label>Note</label>
        <textarea name="short_text" id="bookmarkShortText"  class="span4"></textarea>
 
@@ -16,5 +24,12 @@
        <input type="submit" value="save" class="btn btn-primary"/>
        <a href="javascript:parent.postMessage('close', '*')" class="btn">Cancel</a>
    </form>
+   <script type="text/javascript" src="static/js/lib/jquery-1.7.1.min.js"></script>
+   <script type="text/javascript" src="static/js/lib/chosen.jquery.min.js"></script>
+   <script type="text/javascript">
+       $(function(){
+           $('#topicTags').chosen({no_results_text: "No results matched"});
+       });
+   </script>
 </body>
 </html>
