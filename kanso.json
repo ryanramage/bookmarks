@@ -14,7 +14,7 @@
         "128": "static/icons/icon_128.png"
     },
     "promo_images": {
-        "small": "static/images/promo_small.png"
+        "small": "static/img/promo_small.png"
     },
     "screenshots": [
         "static/img/screenshot1.png",
