@@ -2606,14 +2606,16 @@ window.html2canvas = html2canvas;
  */
 (function(window){
 
+
+
     function couchBookmarkerBookmarklet(){
 		//the page to the template.
 		createIFrame();
 
         var couch_location = $('#couch-bookmarklet').data('location');
-        var hash = md5(window.location);
+
         var doc  = {
-            _id : hash,
+
             url : encodeURIComponent(window.location),
             title : encodeURIComponent(window.document.title)
         }
