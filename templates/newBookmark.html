@@ -24,7 +24,7 @@
        <input name="url" value="{{url}}"  class="span4"/>
        <label></label>
        <input type="submit" value="save" class="btn btn-primary"/>
-       <input type="submit" value="Save (Screenshot)" class="btn btn-primary ss" disabled="disabled"/>
+       <input type="submit" value="Save with screenshot" class="btn btn-primary ss" disabled="disabled"/>
        <a href="javascript:parent.postMessage('close', '*')" class="btn">Cancel</a>
    </form>
    <script type="text/javascript" src="static/js/lib/jquery-1.7.1.min.js"></script>
@@ -32,7 +32,6 @@
    <script type="text/javascript">
        parent.postMessage('ready', '*');
        window.addEventListener("message", function(message){
-           console.log('got ss');
            var img = message.data.substring(22);
            $('#screenshot').val(img);
            $('.btn-primary.ss').removeAttr('disabled');

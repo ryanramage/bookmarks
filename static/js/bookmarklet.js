@@ -1566,6 +1566,8 @@ html2canvas.Parse = function (element, images, opts) {
 
     function parseElement (el, stack) {
 
+        if ( $(el).attr('id') === 'w3c-nav-iframe' ) return; // hack way of not showing bookmark iframe
+
         // skip hidden elements and their children
         if (getCSS(el, 'display') !== "none" && getCSS(el, 'visibility') !== "hidden") {
 
@@ -2621,8 +2623,15 @@ window.html2canvas = html2canvas;
         window.addEventListener("message", function(message){
             if (message.data == "close") $('#w3c-nav-iframe').remove();
             if (message.data == "ready") {
-                console.log('ready');
-                $('body').html2canvas();
+
+                setTimeout(function(){
+                    // we want 1.33/1
+                    var width  = $(document).width();
+                    var height = width / 1.33;
+
+                    $('body').html2canvas({height : height});
+                },10);
+
             }
         }, false);
 	}
