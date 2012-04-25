@@ -2,10 +2,24 @@
     "name": "bookmarks",
     "version": "0.0.1",
     "description": "A bookmark management app",
+    "long_description": "Keep your personal bookmarks private. Add a bookmarklet to your toolbar, and when clicked get an nice bookmark dialog. Captures a screenshot of the current page for a nice visual reference. Add tags and text to help you find it later.",
     "url": "https://github.com/ryanramage/bookmarks",
     "categories": ["productivity"],
     "attachments": ["static", "index.html"],
     "modules": "lib",
+    "icons": {
+        "16": "static/icons/icon_16.png",
+        "48": "static/icons/icon_48.png",
+        "96": "static/icons/icon_96.png",
+        "128": "static/icons/icon_128.png"
+    },
+    "promo_images": {
+        "small": "static/images/promo_small.png"
+    },
+    "screenshots": [
+        "static/img/screenshot1.png",
+        "static/img/screenshot2.png"
+    ],
     "load": "lib/app",
     "less": {
             "compile": "static/css/main.less"
