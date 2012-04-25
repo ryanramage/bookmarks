@@ -7,7 +7,7 @@ $(function() {
     $('#myModal').modal();
     $('#myModal').modal('hide');
 
-    $('.help').tooltip({placement: 'bottom'});
+    $('.help').tooltip({placement: 'bottom', delay: { show: 1000, hide: 100 }});
 
     var location = window.location;
     var bookmarklet = location.protocol + '//' + location.host + location.pathname;
