@@ -14,7 +14,7 @@ $(function(){
             $.ajax({
                   url :  './save?title=' + $('#bookmarkTitle').val() + '&url=' + $('#bookmarkUrl').val() ,
                   type: 'POST',
-                  data : + 'short_text=' + $('#bookmarkShortText').val(),
+                  data : 'short_text=' + $('#bookmarkShortText').val(),
                   success : function(result) {
                       returnToUrl($('#bookmarkUrl').val());
                   },
