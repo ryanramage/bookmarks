@@ -2,7 +2,11 @@
     <div class="row">
         <div class="span2">
             <a href="{{url}}"  class="bookmark"  data-id="{{_id}}">
+                {{#if _attachments}}
+                <img src="./screenshot/{{_id}}" class="site-image local"/>
+                {{else}}
                 <img src='http://www.bitpixels.com/getthumbnail?size=200&code={{random}}&url={{url}}' class="site-image"/>
+                {{/if}}
             </a>
         </div>
         <div class="span5">

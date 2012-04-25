@@ -47,6 +47,25 @@ $(function() {
     });
 
 
+    $('img.local').live({
+            mouseenter: function() {
+                var docElm = $(this)[0];
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                }
+                else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                }
+                else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                }
+            },
+            mouseleave: function() {
+
+            }
+    })
+
+
     // our click tracker
     $('a.bookmark').live('click', function(){
         var id = $(this).data("id");
