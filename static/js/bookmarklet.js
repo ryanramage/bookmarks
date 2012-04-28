@@ -2548,8 +2548,30 @@ window.html2canvas = html2canvas;
             try {
                 var img = $canvas[0].toDataURL("image/png");
 
-                document.getElementById("w3c-nav-iframe").contentWindow.postMessage(img, '*')
+                document.getElementById("w3c-nav-iframe").contentWindow.postMessage({size: 'large', img: img}, '*');
+
+
+
+                var imageManipulationCanvas = document.createElement('canvas');
+                imageManipulationCanvas.setAttribute('width',140);
+                imageManipulationCanvas.setAttribute('height',105);
+
+
+                var imageManipulationCtx = imageManipulationCanvas.getContext('2d');
+                var image = new Image();
+                image.onload = function() {
+                    imageManipulationCtx.drawImage(image, 0, 0, 140, 105);
+                    var resizedImageDataURL = imageManipulationCanvas.toDataURL("image/png"); //get DataURL for cropped image
+                    document.getElementById("w3c-nav-iframe").contentWindow.postMessage({size: 'small', img: resizedImageDataURL}, '*');
+                }
+                image.src = img;
+
+
+
+
+
             } catch(e) {
+                console.log(e);
                 if ($canvas[0].nodeName.toLowerCase() === "canvas") {
                     // TODO, maybe add a bit less offensive way to present this, but still something that can easily be noticed
                     alert("Canvas is tainted, unable to read data");

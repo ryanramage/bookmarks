@@ -94,6 +94,13 @@ $(function() {
         _.each(data.rows, function(row) {
             var random = Math.floor(Math.random()*10000);
             row.doc.random = random;
+
+            var screenshot = null;
+            if (row.doc._attachments && row.doc._attachments['screenshot_small.png']) { screenshot = 'screenshot_small'}
+            else if (row.doc._attachments && row.doc._attachments['screenshot.png']) { screenshot = 'screenshot'}
+
+            row.doc.screenshot = screenshot;
+
             $('.bookmarks').append(handlebars.templates['bookmark_row.html'](row.doc, {}));
             $('img.site-image').error(function() {
                  $(this).attr('src', 'static/img/ark2.png');

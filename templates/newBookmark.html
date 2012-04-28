@@ -16,6 +16,7 @@
        </select>
 
        <input type="hidden" name="screenshot" id="screenshot"/>
+       <input type="hidden" name="screenshot_small" id="screenshot_small"/>
 
        <label>Note</label>
        <textarea name="short_text" id="bookmarkShortText"  class="span4"></textarea>
@@ -32,8 +33,16 @@
    <script type="text/javascript">
        parent.postMessage('ready', '*');
        window.addEventListener("message", function(message){
-           var img = message.data.substring(22);
-           $('#screenshot').val(img);
+
+           if (message.data.size == 'large') {
+
+               var img = message.data.img.substring(22);
+               $('#screenshot').val(img);
+           }
+           if (message.data.size == 'small') {
+               var img = message.data.img.substring(22);
+               $('#screenshot_small').val(img);
+           }
            $('.btn-primary.ss').removeAttr('disabled');
        }, false);
        $(function(){
