@@ -130,7 +130,7 @@ $(function() {
     function to_review() {
         if (checkLastRoute('to-review')) return;
         activate_tab('to-review');
-        db.getView('bookmarks', 'by_views', {include_docs:true, descending: true, endkey : [0], startkey: [0, {}], random : Math.floor(Math.random()*10000) }, function(err, data) {
+        db.getView('bookmarks', 'by_views', {include_docs:true, descending: false, startkey : [0], endkey: [0, {}], random : Math.floor(Math.random()*10000) }, function(err, data) {
             if (err) return humane.error(err);
             render_data(data, "Woohoo! You've read all your bookmarks. ");
         });
